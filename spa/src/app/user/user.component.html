@@ -1,0 +1,62 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Data Mahasiswa</h4>
+                    </div>
+                    <div class="content">
+                        <div class="header" *ngIf="errorMessage != null">
+                            <h4 class="title"><b>{{errorMessage}}</b></h4>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>Nomor Induk Mahasiswa</label>
+                                        <input type="text" class="form-control" disabled placeholder="Nomor Induk Mahasiswa" name="id" [(ngModel)]="mahasiswa.id">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nama Depan</label>
+                                        <input type="text" class="form-control" placeholder="Nama Depan" name="namaDepan" [(ngModel)]="mahasiswa.namaDepan" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nama Belakang</label>
+                                        <input type="text" class="form-control" placeholder="Nama Belakang" name="namaBelakang" [(ngModel)]="mahasiswa.namaBelakang">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Tanggal Lahir</label>
+                                        <input type="text" class="form-control" placeholder="Tanggal Lahir" name="tanggalLahir" [(ngModel)]="mahasiswa.tanggalLahir" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Usia</label>
+                                        <input type="text" class="form-control" disabled placeholder="Usia" name="usia" [(ngModel)]="usia">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger" (click)="updateProfile('DELETE')">Hapus Mahasiswa</button>
+                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="updateProfile('POST')">Simpan Perubahan</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
